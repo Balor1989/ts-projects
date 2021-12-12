@@ -1,4 +1,12 @@
-export const tasks: { id: string; completed: boolean; body: string; title:string}[] = [
+export interface TaskValues {
+    id: string;
+    completed: boolean;
+    body: string;
+    title: string 
+}
+
+
+export const tasks: TaskValues[] = [
   {
     id: 'task-5203j93h4nt8u45g',
     completed: true,
