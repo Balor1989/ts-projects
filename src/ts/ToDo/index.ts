@@ -13,20 +13,17 @@ function onTask(arrOfTasks: TaskValues[]):{}{
 
 onTask(tasks)
 const listContainer = document.querySelector('.list-group');
-console.log(listContainer)
-
-renderAllTasks(objOfTasks)
 
 
-function renderAllTasks(tasksList: {}) {
-    if (!tasksList) {
-      console.error('Add task list');
-      return;
-    }
+function renderAllTasks(tasksList: {}): HTMLElement {
+  if (!tasksList) {
+    console.error('Add task list');
+    return;
+  }
 
   const fragment = document.createDocumentFragment();
-  // убрать any!!!
-    Object.values(tasksList).forEach((task:any) => {
+  // УБРАТЬ any!!!
+  Object.values(tasksList).forEach((task:any):void => {
       const li = listItemTemplate(task);
       fragment.appendChild(li);
     });
@@ -51,4 +48,6 @@ function renderAllTasks(tasksList: {}) {
     li.appendChild(deleteBtn);
 
     return li;
-  }
+}
+  
+renderAllTasks(objOfTasks)
