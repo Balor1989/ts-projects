@@ -13,6 +13,30 @@ const listContainer: HTMLElement = document.querySelector('.list-group');
 const taskForm: HTMLFormElement = document.querySelector('.task-form');
 const inputTitle: HTMLInputElement = document.querySelector('.input-title');
 const inputText: HTMLInputElement = document.querySelector('.input-text');
+const selectTheme: HTMLInputElement = document.querySelector('.select')
+selectTheme.addEventListener('change', onSelectTheme)
+
+
+function onSelectTheme(event: Event): void {
+  const selectedTheme = selectTheme.value
+  setTheme(selectedTheme)
+}
+
+function setTheme(name: string): void {
+  switch (name) {
+    case 'light':
+      document.body.style.backgroundColor = "#ffffff"
+      document.body.style.color = "#000000"
+      break;
+    case 'dark':
+      document.body.style.backgroundColor = "#787878"
+      document.body.style.color = "#d3d3d3"
+      break;
+    case 'default':
+      document.body.style.backgroundColor = "#d3d3d3"
+      document.body.style.color = "#000000"
+  }
+}
 
 taskForm.addEventListener('submit', onSubmitForm)
 listContainer.addEventListener('click', onDeleteTask)
