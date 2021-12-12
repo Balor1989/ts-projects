@@ -17,7 +17,7 @@ const selectTheme: HTMLInputElement = document.querySelector('.select')
 selectTheme.addEventListener('change', onSelectTheme)
 
 
-function onSelectTheme(event: Event): void {
+function onSelectTheme(): void {
   const selectedTheme = selectTheme.value
   setTheme(selectedTheme)
 }
@@ -48,8 +48,6 @@ function onDeleteTask(event): void {
   if (event.target.classList.contains('delete-button')) {
     const deleteElement = event.target.closest('[data-task-id]'); 
     const id = deleteElement.dataset.taskId
-    console.log(deleteElement)
-    console.log(event.target)
     Confirm.show(
     'Attention!',
     'Do you really want to delete this task',
