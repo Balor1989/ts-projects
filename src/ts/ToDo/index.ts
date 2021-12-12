@@ -20,9 +20,34 @@ listContainer.addEventListener('click', onDeleteTask)
 onTask(tasks)
 renderAllTasks(objOfTasks)
 
-function onDeleteTask(event: Event): void {
-  console.log(event.target)
+function onDeleteTask(event): void {
+  if (event.target.classList.contains('delete-button')) {
+    const deleteElement = event.target.closest('[data-task-id]'); 
+    const id = deleteElement.dataset.taskId
+    console.log(deleteElement)
+    console.log(event.target)
+    Confirm.show(
+    'Attention!',
+    'Do you really want to delete this task',
+    'Yes',
+    'No',
+      function okCb(): void {
+        delete objOfTasks[id]
+        deleteElement.remove()
+    },
+    function cancelCb():void {
+      return
+    },
+    {
+      width: '320px',
+      borderRadius: '8px',
+    },
+);
+    
+  }
 } 
+
+
 
 
 function onSubmitForm(event: Event): void{
@@ -71,8 +96,9 @@ function renderAllTasks(tasksList: {}): HTMLElement {
 
 
 // ///////////переписать в модуль
-  function listItemTemplate({title, text }:TaskValues) {
+  function listItemTemplate({title, text, id }:TaskValues) {
     const li = document.createElement('li');
+    li.setAttribute('data-task-id', id);
 
     const taskTitle = document.createElement('h2');
     taskTitle.textContent = title;
@@ -92,20 +118,3 @@ function renderAllTasks(tasksList: {}): HTMLElement {
     return li;
 }
   
-
-// Confirm.show(
-//   'Notiflix Confirm',
-//   'Do you really want to delete this task',
-//   'Yes',
-//   'No',
-//   function okCb() {
-//     alert('Thank you.');
-//   },
-//   function cancelCb() {
-//     alert('If you say so...');
-//   },
-//   {
-//     width: '320px',
-//     borderRadius: '8px',
-//   },
-// );
