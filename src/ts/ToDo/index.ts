@@ -9,11 +9,15 @@ function onTask(arrOfTasks: TaskValues[]):{}{
         return acc;
     }, {})
 }
+
+
 onTask(tasks)
 const listContainer = document.querySelector('.list-group');
 console.log(listContainer)
 
 renderAllTasks(objOfTasks)
+
+
 function renderAllTasks(tasksList: {}) {
     if (!tasksList) {
       console.error('Add task list');
@@ -29,23 +33,22 @@ function renderAllTasks(tasksList: {}) {
     listContainer.appendChild(fragment);
   }
 
-  function listItemTemplate({ id, title, body }:TaskValues) {
+  function listItemTemplate({title, body }:TaskValues) {
     const li = document.createElement('li');
 
-    const span = document.createElement('span');
-    span.textContent = title;
-    // Переназначить в scss!!!
-    span.style.fontWeight = 'bold';
+    const taskTitle = document.createElement('h2');
+    taskTitle.textContent = title;
+  
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete task';
 
-    const article = document.createElement('p');
-    article.textContent = body;
+    const taskText = document.createElement('p');
+    taskText.textContent = body;
 
-    li.appendChild(span);
+    li.appendChild(taskTitle);
+    li.appendChild(taskText);
     li.appendChild(deleteBtn);
-    li.appendChild(article);
 
     return li;
   }
