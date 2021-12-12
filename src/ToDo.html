@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 1</title>
-    <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
-   
-    <script src="ts/ToDo/index.ts" type="module"></script>
+  <header>
+    <nav class="">
+      <a class="">Body Theme</a>
+      <form class="">
+        <select class="">
+          <option value="default">Theme Default</option>
+          <option value="light">Theme Light</option>
+          <option value="dark">Theme Dark</option>
+        </select>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1 class="card-title">Add new task</h1>
+        <form name="addTask">
+          <input type="text" name="title"  placeholder="Task title" />
+          <input type="text" name="body"  placeholder="Task body" />
+          <button type="submit" class="">Add task</button>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="list-group"></ul>
+    </div>
+    </main>
+    <script src="ts/ToDo/index.ts"></script>
   </body>
 </html>
