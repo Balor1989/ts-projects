@@ -1,4 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
 import '../../sass/ToDo.scss/'
 import { tasks } from "./tasks";
 import { TaskValues } from './interfaces';
@@ -14,9 +15,15 @@ const inputTitle: HTMLInputElement = document.querySelector('.input-title');
 const inputText: HTMLInputElement = document.querySelector('.input-text');
 
 taskForm.addEventListener('submit', onSubmitForm)
+listContainer.addEventListener('click', onDeleteTask)
 
 onTask(tasks)
 renderAllTasks(objOfTasks)
+
+function onDeleteTask(event: Event): void {
+  console.log(event.target)
+} 
+
 
 function onSubmitForm(event: Event): void{
   event.preventDefault()
@@ -46,10 +53,11 @@ function createNewTask(title: string, text: string): TaskValues {
 }
 
 
+
 // ////////переписать в модуль
 function renderAllTasks(tasksList: {}): HTMLElement {
   if (!tasksList) {
-    console.error('Add task list');
+    Notify.failure('Add task list');
     return;
   }
   const fragment = document.createDocumentFragment();
@@ -71,6 +79,7 @@ function renderAllTasks(tasksList: {}): HTMLElement {
   
 
     const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-button')
     deleteBtn.textContent = 'Delete task';
 
     const taskText = document.createElement('p');
@@ -83,3 +92,20 @@ function renderAllTasks(tasksList: {}): HTMLElement {
     return li;
 }
   
+
+// Confirm.show(
+//   'Notiflix Confirm',
+//   'Do you really want to delete this task',
+//   'Yes',
+//   'No',
+//   function okCb() {
+//     alert('Thank you.');
+//   },
+//   function cancelCb() {
+//     alert('If you say so...');
+//   },
+//   {
+//     width: '320px',
+//     borderRadius: '8px',
+//   },
+// );
