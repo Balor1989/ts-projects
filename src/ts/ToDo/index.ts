@@ -34,8 +34,10 @@ function onDeleteTask(event): void {
       function okCb(): void {
         delete objOfTasks[id]
         deleteElement.remove()
+        Notify.success('deleted');
     },
-    function cancelCb():void {
+      function cancelCb(): void {
+      Notify.info('operation canceled');
       return
     },
     {
@@ -47,15 +49,12 @@ function onDeleteTask(event): void {
   }
 } 
 
-
-
-
 function onSubmitForm(event: Event): void{
   event.preventDefault()
   const titleValue: string = inputTitle.value;
   const textValue: string = inputText.value;
   if (textValue === '' || titleValue === '') {
-    Notify.failure('Plese input task title and task text');
+    Notify.failure('Please input task title and task text');
     return
   }
   const task = createNewTask(titleValue, textValue);
