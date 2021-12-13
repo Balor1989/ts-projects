@@ -24,12 +24,22 @@
     line-height: 1.17;
   }
   &__select {
+    padding: 5px;
+    cursor: pointer;
     background-color: #faf5f5;
     border: none;
     border-radius: 5px;
     font-family: 'open sans', sans-serif;
     box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
       0px 2px 1px rgb(0 0 0 / 20%);
+  }
+  &__default-theme,
+  &__light-theme,
+  &__dark-theme,
+  &__select {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.17;
   }
   &__back {
     width: 35px;
@@ -46,10 +56,16 @@
   &__arrow {
     width: 20px;
     height: 20px;
+    transition: transform 350ms;
+  }
+  &__back:hover .header__arrow,
+  &__back:focus .header__arrow {
+    transform: rotate(-360deg);
   }
 }
 .main {
   padding-top: 60px;
+  padding-bottom: 60px;
   &__container {
     padding-left: 30px;
     padding-right: 30px;
@@ -60,6 +76,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+  &__card {
+    border-radius: 20px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+    background-color: #e9f0e9b9;
+  }
   &__card-title {
     margin-bottom: 30px;
     font-family: roboto, sans-serif;
@@ -67,9 +92,40 @@
     font-size: 40px;
     line-height: 1.17;
   }
-  &__card-item {
+  &__input-title,
+  &__input-text {
+    margin-bottom: 30px;
     padding: 10px;
     background-color: #faf5f5;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+  }
+  &__add-button,
+  &__delete-button {
+    font-family: 'open sans', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.17;
+    cursor: pointer;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    background-color: #faf5f5;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+    transition: background-color 250ms;
+  }
+  &__add-button:hover,
+  &__add-button:focus,
+  &__delete-button:hover,
+  &__delete-button:focus {
+    background-color: #45880675;
+  }
+  &__card-item {
+    padding: 20px;
+    background-color: #e9f0e9b9;
     border-radius: 20px;
     box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
       0px 2px 1px rgb(0 0 0 / 20%);
