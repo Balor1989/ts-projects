@@ -2,6 +2,7 @@ import { TaskValues } from "./TaskValues";
 
 export function listItemTemplate({ title, text, id }: TaskValues) {
     const li = document.createElement('li');
+    li.classList.add('main__card-item')
     li.setAttribute('data-task-id', id);
 
     const taskTitle = document.createElement('h2');
