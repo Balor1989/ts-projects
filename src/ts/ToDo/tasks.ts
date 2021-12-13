@@ -1,4 +1,4 @@
-import { TaskValues } from "./interfaces";
+import { TaskValues } from "./TaskValues";
 
 export const tasks: TaskValues[] = [
   {

@@ -1,4 +1,4 @@
-import { TaskValues } from "./interfaces";
+import { TaskValues } from "./TaskValues";
 export let objOfTasks: {} | null = null;
 
 

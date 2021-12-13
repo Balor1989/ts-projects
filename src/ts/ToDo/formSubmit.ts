@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { inputText, inputTitle, listContainer, taskForm } from "./variables";
-import { TaskValues } from './interfaces';
+import { TaskValues } from './TaskValues';
 import { objOfTasks } from './getTasks';
 import { listItemTemplate } from './createTask';
 

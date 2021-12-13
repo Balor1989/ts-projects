@@ -1,5 +1,5 @@
-import { TaskValues } from "./interfaces";
- 
+import { TaskValues } from "./TaskValues";
+
 export function listItemTemplate({ title, text, id }: TaskValues) {
     const li = document.createElement('li');
     li.setAttribute('data-task-id', id);

@@ -1,9 +1,3 @@
+@import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 @import './components/tag-settings';
-
-body {
-  background-color: #d3d3d3;
-}
-
-li {
-  margin-top: 20px;
-}
+@import './components/ToDo/header';
