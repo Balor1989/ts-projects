@@ -27,4 +27,4 @@ var t,i=arguments[3];!function(i,n){"function"==typeof t&&t.amd?t([],function(){
 },{"notiflix/build/notiflix-notify-aio":"MeeU","./createTask":"gIO4","./variables":"EwFm"}],"eqLF":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("../../sass/ToDo.scss/");var e=require("./tasks"),r=require("./getTasks"),s=require("./changeTheme"),t=require("./taskDelete"),a=require("./changeTheme"),i=require("./formSubmit"),n=require("./variables"),o=require("./taskRender");(0,s.setTheme)(localStorage.getItem("theme")),n.selectTheme.addEventListener("change",a.onSelectTheme),n.taskForm.addEventListener("submit",i.onSubmitForm),n.listContainer.addEventListener("click",t.onDeleteTask),(0,r.onTask)(e.tasks),(0,o.renderAllTasks)(r.objOfTasks);
 },{"../../sass/ToDo.scss/":"Ts34","./tasks":"kLU8","./getTasks":"k5s7","./changeTheme":"CP9d","./taskDelete":"QUIb","./formSubmit":"ar5O","./variables":"EwFm","./taskRender":"UCnS"}]},{},["eqLF"], null)
-//# sourceMappingURL=/ts-projects/ToDo.80199108.js.map
+//# sourceMappingURL=/ts-projects/ToDo.05bd467e.js.map
