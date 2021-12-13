@@ -24,15 +24,28 @@
     line-height: 1.17;
   }
   &__select {
-    background-color: transparent;
-    border: 2px solid #000000;
+    background-color: #faf5f5;
+    border: none;
+    border-radius: 5px;
     font-family: 'open sans', sans-serif;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
   }
   &__back {
-    padding: 10px;
-    border: 2px solid #000000;
-    border-radius: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #faf5f5;
+    border-radius: 50%;
     text-decoration: none;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+  }
+  &__arrow {
+    width: 20px;
+    height: 20px;
   }
 }
 .main {
@@ -55,8 +68,14 @@
     line-height: 1.17;
   }
   &__card-item {
+    padding: 10px;
     background-color: #faf5f5;
     border-radius: 20px;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+  }
+  &__card-item:not(:last-child) {
+    margin-bottom: 30px;
   }
   &__task-container {
     text-align: center;
