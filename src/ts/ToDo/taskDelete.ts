@@ -3,7 +3,7 @@ import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
 import { objOfTasks } from './getTasks';
 
 export function onDeleteTask(event): void {
-  if (event.target.classList.contains('delete-button')) {
+  if (event.target.classList.contains('main__delete-button')) {
     const deleteElement = event.target.closest('[data-task-id]'); 
     const id = deleteElement.dataset.taskId
     Confirm.show(

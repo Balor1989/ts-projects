@@ -9,7 +9,7 @@ export function listItemTemplate({ title, text, id }: TaskValues) {
   
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('delete-button')
+    deleteBtn.classList.add('main__delete-button')
     deleteBtn.textContent = 'Delete task';
 
     const taskText = document.createElement('p');

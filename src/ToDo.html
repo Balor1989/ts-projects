@@ -14,31 +14,33 @@
         <div class="header__theme-box">
           <h2 class="header__theme">Body Theme</h2>
           <form class="">
-            <select class="select">
-              <option class="default-theme" value="default">Theme Default</option>
-              <option class="ligth-theme" value="light">Theme Light</option>
-              <option class="dark-theme" value="dark">Theme Dark</option>
+            <select class="header__select">
+              <option class="header__default-theme" value="default">Theme Default</option>
+              <option class="header__ligth-theme" value="light">Theme Light</option>
+              <option class="header__dark-theme" value="dark">Theme Dark</option>
             </select>
           </form>
         </div>
       </nav>
     </div>
   </header>
-  <main>
-    <div class="info-container">
-      <div class="card">
-        <h1 class="card-title">Add new task</h1>
-        <form name="addTask" class="task-form">
-          <input type="text" name="title"class="input-title "  placeholder="Task title" />
-          <input type="text" name="text" class="input-text " placeholder="Task text" />
-          <button type="submit" class="">Add task</button>
-        </form>
+  <main class="main">
+    <div class="main__container">
+      <div class="main__info-container">
+        <div class="main__card">
+          <h1 class="main__card-title">Add new task</h1>
+          <form name="addTask" class="main__task-form">
+            <input type="text" name="title"class="main__input-title "  placeholder="Task title" />
+            <input type="text" name="text" class="main__input-text " placeholder="Task text" />
+            <button type="submit" class="">Add task</button>
+          </form>
+        </div>
+      </div>
+      <div class="main__task-container">
+        <ul class="main__list-group"></ul>
       </div>
     </div>
-    <div class="task-container">
-      <ul class="list-group"></ul>
-    </div>
-    </main>
+  </main>
     <script src="ts/ToDo/index.ts"></script>
   </body>
 </html>
