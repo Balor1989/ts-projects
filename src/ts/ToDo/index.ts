@@ -6,7 +6,7 @@ import { TaskValues } from './interfaces';
 import { onTask, objOfTasks } from './getTasks'
 
 
-
+setTheme(localStorage.getItem('theme'));
 
 
 const listContainer: HTMLElement = document.querySelector('.list-group');
@@ -27,15 +27,19 @@ function setTheme(name: string): void {
     case 'light':
       document.body.style.backgroundColor = "#ffffff"
       document.body.style.color = "#000000"
+      localStorage.setItem('theme', 'light')
       break;
     case 'dark':
       document.body.style.backgroundColor = "#787878"
       document.body.style.color = "#d3d3d3"
+      localStorage.setItem('theme', 'dark')
       break;
     case 'default':
       document.body.style.backgroundColor = "#d3d3d3"
       document.body.style.color = "#000000"
+      localStorage.setItem('theme', 'default')
   }
+  
 }
 
 taskForm.addEventListener('submit', onSubmitForm)
