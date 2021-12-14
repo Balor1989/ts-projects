@@ -20,5 +20,4 @@ listContainer.addEventListener('click', onDeleteTask)
 onTask(tasks)
 renderAllTasks(objOfTasks)
 
-
-
+console.log(objOfTasks)
