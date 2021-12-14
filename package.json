@@ -22,6 +22,7 @@
     "@fontsource/open-sans": "^4.5.2",
     "@fontsource/roboto": "^4.5.1",
     "axios": "^0.24.0",
+    "handlebars": "^4.7.7",
     "notiflix": "^3.2.2",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
