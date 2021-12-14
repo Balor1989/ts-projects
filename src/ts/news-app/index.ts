@@ -3,6 +3,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 import { ResponseNews } from './interfaces/ResponseNews';
+import { ResponseAll } from './interfaces/ResponseAll';
 
 
 const url: string = 'https://newsapi.org/v2/';
@@ -35,21 +36,31 @@ function fetchNewsbyCountry(country: string = 'us'): void {
     Loading.dots();
     axios.get(`${url}top-headlines?country=${country}&apiKey=${API_KEY}`).then(response => {
         const values = response.data;
-        renderNewsBox(values.articles);
+       convertInformation(values)
     }).catch(function (error) {
         console.log(error);
     });
     Loading.remove();
 };
     
+function convertInformation(response:ResponseAll) {
+    if (!response.totalResults) {
+        Notify.failure('no news')
+        renderNewsBox(response.articles);
+        return  
+    }
+    Notify.info(`${response.totalResults} news items were found for your request`);
+renderNewsBox(response.articles);
+}
+
 function fetchNewsbySearch(search: string): void {
     Loading.dots();
-        axios.get(`${url}everything?q=${search}&apiKey=${API_KEY}`).then(response => {
-           const values = response.data;
-        renderNewsBox(values.articles);
+    axios.get(`${url}everything?q=${search}&apiKey=${API_KEY}`).then(response => {
+        const values = response.data
+             convertInformation(values)
     }).catch(function (error) {
         console.log(error);
-    });
+    })
     Loading.remove();
 };
 
@@ -70,7 +81,7 @@ function renderNewsBox(news: Array<ResponseNews>): void {
 }
 
 function newsTemplate({ urlToImage, title, url, description, source }: ResponseNews): string {     
-  return `
+    return `
       <div class="news__card">
         <div class="news__card-image">
           <h2 class="news__card-title">${title || ''}</h2>
@@ -84,6 +95,7 @@ function newsTemplate({ urlToImage, title, url, description, source }: ResponseN
         </div>
       </div>
   `;
+    
 }
 
 function clearCardList(box: HTMLBodyElement) {
