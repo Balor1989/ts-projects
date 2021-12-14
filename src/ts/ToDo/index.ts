@@ -1,6 +1,6 @@
 import "@fontsource/open-sans"
 import "@fontsource/roboto"
-import '../../sass/ToDo.scss/'
+import '../../sass/to-do.scss/'
 import { tasks } from "./tasks";
 import { onTask, objOfTasks } from './getTasks';
 import { setTheme } from './changeTheme';

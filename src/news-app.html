@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News app</title>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="header__navigation">
-                <a class="header__back" href="index.html">
-                    <svg class="header__arrow">
-                        <use href="images/arrow.svg#arrow-left2"></use>
-                    </svg> 
-                </a>
-            </nav>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News app</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav class="header__navigation">
+                    <a class="header__back" href="index.html">
+                        <svg class="header__arrow">
+                            <use href="images/arrow.svg#arrow-left2"></use>
+                        </svg> 
+                    </a>
+                    <h1 class="header__title">News App</a>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+        <section class="card">
+            <h2 class="card__title"></h2>
+            <div class="container">
+                <div class="card__card">
+                    <form name="card__card-form">
+                        <h2 class="card__card-title">Search news</h2>
+                        <div class="card__input-box">
+                            <select class="card__select-country" name="country" id="country">
+                                <option value="ua">Ukraine</option>
+                                <option value="us">United States</option>
+                            </select>
+                            <label>Choose your country</label>
+                        </div>
+                        <div class="card__input">
+                            <input type="text" id="input" class="autocomplete" name="search" />
+                            <label for="input">Search</label>
+                        </div>
+                        <div class="card__button-box">
+                            <button class="card__button" type="submit" name="action">
+                            Search
+                            </button>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </section>
+            <section class="news">
+                <h2 class="news__title"></h2>
+                <div class="container">
+                    <div class="news__card">
 
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-        </div>
-    </footer>
- <script src="./ts/news-app/index.ts"></script>
-</body>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- <footer class="footer">
+            <div class="container">
+            </div>
+        </footer> -->
+    <script src="./ts/news-app/index.ts"></script>
+    </body>
 </html>
