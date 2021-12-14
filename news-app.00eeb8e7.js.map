@@ -1,1 +1,0 @@
-{"version":3,"sources":["ts/news-app/index.ts"],"names":[],"mappings":";;;AAAA,aAAA,OAAA,eAAA,QAAA,aAAA,CAAA,OAAA,IAAA,QAAA","file":"news-app.00eeb8e7.js","sourceRoot":"../src","sourcesContent":["import '../../sass/news-app.scss'"]}
