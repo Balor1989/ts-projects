@@ -12,6 +12,13 @@ const form: HTMLBodyElement = document.querySelector('.card-section__card-form')
 const countrySelect: HTMLInputElement = document.querySelector('.card-section__select-country');
 const searchInput: HTMLInputElement = document.querySelector('.card-section__input');
 
+Notify.init({
+width: '350px',
+fontSize: '21px',
+position: 'right-top',
+distance: '30px',
+opacity: 1,
+});
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -80,7 +87,7 @@ function renderNewsBox(news: Array<ResponseNews>): void {
       newsBox.insertAdjacentHTML('afterbegin', fragment);
 }
 
-function newsTemplate({ urlToImage, title, url, description, source }: ResponseNews): string {     
+function newsTemplate({ urlToImage, title, url, description, source }: ResponseNews): string {  
     return `
       <div class="news__card">
         <div class="news__card-image">
