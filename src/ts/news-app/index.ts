@@ -5,7 +5,9 @@ interface ResponseNews  {
     urlToImage: string;
     title: string;
     url: string;
-    description:string
+    description: string;
+    source:{ id: string, name: string }
+    
 }
  
 const url: string = 'https://newsapi.org/v2/';
@@ -30,7 +32,7 @@ fetchNewsbySearch('ua')
 
 function renderNewsBox(news: Array<ResponseNews>): void {
     
-    const newsBox = document.querySelector('.news__card')
+    const newsBox = document.querySelector('.news__card-list')
     let fragment = '';
 
     news.forEach(element => {
@@ -41,21 +43,19 @@ function renderNewsBox(news: Array<ResponseNews>): void {
       newsBox.insertAdjacentHTML('afterbegin', fragment);
 }
 
-function newsTemplate({ urlToImage, title, url, description }:ResponseNews): string {
+function newsTemplate({ urlToImage, title, url, description, source }:ResponseNews): string {
   return `
-    <div class="col s12">
-      <div class="card">
-        <div class="card-image">
-          <img src="${urlToImage}">
-          <span class="card-title">${title || ''}</span>
+      <div class="news__card">
+        <div class="news__card-image">
+          <img src="${urlToImage}" alt="${source.name}">
+          <h2 class="news__card-title">${title || ''}</h2>
         </div>
-        <div class="card-content">
+        <div class="news__card-content">
           <p>${description || ''}</p>
         </div>
-        <div class="card-action">
+        <div class="news__card-action">
           <a href="${url}">Read more</a>
         </div>
       </div>
-    </div>
   `;
 }
