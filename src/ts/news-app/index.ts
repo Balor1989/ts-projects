@@ -11,6 +11,7 @@ const form: HTMLBodyElement = document.querySelector('.card-section__card-form')
 const countrySelect: HTMLInputElement = document.querySelector('.card-section__select-country');
 const searchInput: HTMLInputElement = document.querySelector('.card-section__input');
 
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     loadNews();
@@ -20,59 +21,55 @@ form.addEventListener('submit', (event) => {
 function loadNews() {
     const country = countrySelect.value;
     const search = searchInput.value;
-    if (!searchInput.value) {
+    if (!search) {
         fetchNewsbyCountry(country);
     };
-    if (searchInput.value) {
+    if (search) {
         fetchNewsbySearch(search);
+        searchInput.value = '';
     };
-        
-    console.log(country, search);
 };
 
 
 function fetchNewsbyCountry(country: string = 'us'): void {
     Loading.dots();
-    try {
-        axios.get(`${url}top-headlines?country=${country}&apiKey=${API_KEY}`).then(response => {
-            const values = response.data;
-            renderNewsBox(values.articles)
-        })
-    }
-    
-    catch { console.error() }
+    axios.get(`${url}top-headlines?country=${country}&apiKey=${API_KEY}`).then(response => {
+        const values = response.data;
+        renderNewsBox(values.articles);
+    }).catch(function (error) {
+        console.log(error);
+    });
     Loading.remove();
+};
     
-} 
 function fetchNewsbySearch(search: string): void {
     Loading.dots();
-    try {
-        axios.get(`${url}top-headlines?q=${search}&apiKey=${API_KEY}`).then(response => {
-            const values = response.data;
-            console.log(values.articles)
-            renderNewsBox(values.articles)
-        })
-    }
-    catch { console.error() }
+        axios.get(`${url}everything?q=${search}&apiKey=${API_KEY}`).then(response => {
+           const values = response.data;
+        renderNewsBox(values.articles);
+    }).catch(function (error) {
+        console.log(error);
+    });
     Loading.remove();
-}
+};
 
 fetchNewsbyCountry()
 
 function renderNewsBox(news: Array<ResponseNews>): void {
-    
-    const newsBox = document.querySelector('.news__card-list')
+    const newsBox: HTMLBodyElement = document.querySelector('.news__card-list');
+    if (newsBox.children.length) {
+        clearCardList(newsBox)
+    }
     let fragment = '';
 
     news.forEach(element => {
-      console.log()
       const el = newsTemplate(element);
     fragment += el;
   })
       newsBox.insertAdjacentHTML('afterbegin', fragment);
 }
 
-function newsTemplate({ urlToImage, title, url, description, source }:ResponseNews): string {
+function newsTemplate({ urlToImage, title, url, description, source }: ResponseNews): string {     
   return `
       <div class="news__card">
         <div class="news__card-image">
@@ -87,4 +84,8 @@ function newsTemplate({ urlToImage, title, url, description, source }:ResponseNe
         </div>
       </div>
   `;
+}
+
+function clearCardList(box: HTMLBodyElement) {
+    box.innerHTML= ''
 }
