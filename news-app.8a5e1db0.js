@@ -63,6 +63,6 @@ module.exports={version:"0.24.0"};
 },{"./utils":"S1cf","./helpers/bind":"EDTP","./core/Axios":"OvAf","./core/mergeConfig":"OHvn","./defaults":"BXyq","./cancel/Cancel":"mIKj","./cancel/CancelToken":"tsWd","./cancel/isCancel":"V30M","./env/data":"xNqU","./helpers/spread":"X8jb","./helpers/isAxiosError":"wICU"}],"dZBD":[function(require,module,exports) {
 module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"FOu8":[function(require,module,exports) {
-"use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0}),require("../../sass/news-app.scss");var t=e(require("axios")),a="ua",s="https://newsapi.org/v2/",c="adccc341e74c4606857be1b9da45eafd";t.default.get("".concat(s,"top-headlines?country=").concat(a,"&apiKey=").concat(c)).then(function(e){var t=e.data;console.log(t)});
+"use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0}),require("../../sass/news-app.scss");var t=e(require("axios"));function a(e,a){void 0===e&&(e="ua"),void 0===a&&(a="health");var o="https://newsapi.org/v2/",c="adccc341e74c4606857be1b9da45eafd";t.default.get("".concat(o,"top-headlines?country=").concat(e,"&apiKey=").concat(c)).then(function(e){var t=e.data;console.log(t)}),t.default.get("".concat(o,"top-headlines?q=").concat(a,"&apiKey=").concat(c)).then(function(e){var t=e.data;console.log(t)})}a();
 },{"../../sass/news-app.scss":"ajek","axios":"dZBD"}]},{},["FOu8"], null)
-//# sourceMappingURL=/ts-projects/news-app.dd27fac0.js.map
+//# sourceMappingURL=/ts-projects/news-app.8a5e1db0.js.map
