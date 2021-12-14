@@ -8,14 +8,22 @@ function fetchNews(country: string = 'ua', search: string = 'health') {
         
     axios.get(`${url}top-headlines?country=${country}&apiKey=${API_KEY}`).then(response => {
             const values = response.data;
-            const data = values
-            console.log(data)
+            console.log(values.articles)
     })
     axios.get(`${url}top-headlines?q=${search}&apiKey=${API_KEY}`).then(response => {
             const values = response.data;
-            const data = values
-            console.log(data)
+            console.log(values.articles)
     })
 }
 fetchNews()
 
+function renderNewsBox(news) {
+    const newsBox = document.querySelector('.news__card')
+    news.forEach(element => {
+        const elementOfNews = newsTemplate(element)
+    });
+}
+
+function newsTemplate(element) {
+console.log(element)
+}
