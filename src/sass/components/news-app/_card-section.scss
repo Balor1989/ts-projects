@@ -3,4 +3,10 @@
   padding-bottom: 50px;
 
   background-color: whitesmoke;
+
+  &__input-box {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
 }
