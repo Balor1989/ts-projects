@@ -3,7 +3,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 
-const url: string = 'https://newsapi.org/v2/';
+const url: string = 'https://news-api-v2.herokuapp.com';
 const API_KEY: string = 'e0798b45a1134979b576a54b7ede2b27';
 
 
