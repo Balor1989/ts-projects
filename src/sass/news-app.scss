@@ -1,6 +1,7 @@
 @import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 @import './utils/tag-settings';
 @import './components/news-app/header';
+@import './components/news-app/card-section';
 
 .container {
   padding-left: 30px;
