@@ -1,2 +1,8 @@
 @import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 @import './utils/tag-settings';
+@import './components/news-app/header';
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
