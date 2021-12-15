@@ -13,7 +13,7 @@
   }
   &__card {
     max-width: 400px;
-    min-height: 500px;
+    // min-height: 600px;
     margin: 15px;
     width: calc(100 / 2 * 30px) / 2;
     border-radius: 20px;
@@ -21,6 +21,7 @@
       23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   }
   &__image {
+    margin-bottom: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     filter: grayscale(100%);
@@ -29,10 +30,37 @@
   &__card:hover .news-section__image {
     filter: none;
   }
+  &__card-title {
+    font-family: 'readex pro', sans-serif;
+    margin-bottom: 30px;
+  }
   &__content-box {
     padding: 0 25px;
+    margin-bottom: 30px;
   }
   &__action-box {
+    margin-bottom: 10px;
+    text-align: center;
     padding: 0 25px 25px 25px;
+  }
+  &__action-link {
+    text-decoration: none;
+    font-family: roboto, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #2b2170f2;
+    background-color: #faf5f5;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+    transition: 250ms;
+  }
+  &__action-link:hover,
+  &__action-link:focus {
+    background-color: #2b2170f2;
+    color: #f5f5f5;
   }
 }

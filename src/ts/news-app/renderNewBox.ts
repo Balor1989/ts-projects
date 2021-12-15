@@ -15,6 +15,6 @@ export function renderNewsBox(news: Array<ResponseNews>): void {
       newsBox.insertAdjacentHTML('afterbegin', fragment);
 }
 
-function clearCardList(box: HTMLBodyElement) {
+function clearCardList(box: HTMLBodyElement):void {
     box.innerHTML= ''
 }

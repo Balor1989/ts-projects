@@ -6,7 +6,7 @@ import { notiflixSettings } from '../utils/notiflix-init'
 import { backToTop } from '../utils/backToTop'
 import { fetchNewsByCountry} from "./fetchNewsBy";
 
-// fetchNewsByCountry('ua')
+fetchNewsByCountry('us')
 const form: HTMLBodyElement = document.querySelector('.card-section__card-form');
 
 backToTop();
