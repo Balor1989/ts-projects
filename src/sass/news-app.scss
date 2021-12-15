@@ -3,6 +3,10 @@
 @import './components/news-app/header';
 @import './components/news-app/card-section';
 
+body {
+  color: #2b2170f2;
+}
+
 .container {
   max-width: 1280px;
   padding-left: 30px;
