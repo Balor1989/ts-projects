@@ -8,6 +8,6 @@ export function convertInformation(response: ResponseAll) {
         renderNewsBox(response.articles);
         return  
     }
-    Notify.info(`${response.totalResults} news items were found for your request`);
+    Notify.info(`News found`);
 renderNewsBox(response.articles);
 }
