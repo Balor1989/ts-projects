@@ -2,8 +2,10 @@
 @import './utils/tag-settings';
 @import './components/news-app/header';
 @import './components/news-app/card-section';
+@import './components/news-app/news-section';
 
 body {
+  font-family: roboto, sans-serif;
   color: #2b2170f2;
 }
 

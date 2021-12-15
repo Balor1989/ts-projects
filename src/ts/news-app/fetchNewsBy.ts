@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 
 const url: string = 'https://newsapi.org/v2/';
-const API_KEY: string = 'adccc341e74c4606857be1b9da45eafd';
+const API_KEY: string = 'e0798b45a1134979b576a54b7ede2b27';
 
 
 export function fetchNewsByCountry(country: string = 'us'): void {

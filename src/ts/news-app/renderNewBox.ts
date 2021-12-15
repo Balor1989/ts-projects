@@ -2,7 +2,7 @@ import { ResponseNews } from "./interfaces/ResponseNews";
 import { newsTemplate } from "./newsTemplate";
 
 export function renderNewsBox(news: Array<ResponseNews>): void {
-    const newsBox: HTMLBodyElement = document.querySelector('.news__card-list');
+    const newsBox: HTMLBodyElement = document.querySelector('.news-section__card-list');
     if (newsBox.children.length) {
         clearCardList(newsBox)
     }

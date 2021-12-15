@@ -1,5 +1,5 @@
-import "@fontsource/open-sans"
 import "@fontsource/roboto"
+import "@fontsource/open-sans"
 import '../../sass/to-do.scss/'
 import { tasks } from "./tasks";
 import { onTask, objOfTasks } from './getTasks';

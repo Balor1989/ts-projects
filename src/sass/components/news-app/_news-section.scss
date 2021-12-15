@@ -1,25 +1,24 @@
-.card-section {
+.news-section {
   padding-top: 50px;
   padding-bottom: 50px;
-
   background-color: whitesmoke;
-
-  &__input-box {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    margin-bottom: 20px;
-  }
-  &__card {
+  &__card-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -15px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 370px;
-    padding: 25px;
+  }
+  &__card {
+    max-width: 400px;
+    min-height: 500px;
+    margin: 15px;
+    width: calc(100 / 2 * 30px) / 2;
     border-radius: 20px;
+    padding: 25px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
       23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  }
-  &__card-title {
-    text-align: center;
-    margin-bottom: 20px;
   }
 }
