@@ -1,10 +1,13 @@
 import '../../sass/news-app.scss'
 import { loadNews } from './loadNews';
-import {notiflixSettings} from '../utils/notiflix-init'
+import { notiflixSettings } from '../utils/notiflix-init'
+import { backToTop } from '../utils/backToTop'
+
 
 const form: HTMLBodyElement = document.querySelector('.card-section__card-form');
 
-notiflixSettings()
+backToTop();
+notiflixSettings();
 // fetchNewsbyCountry()
 
 form.addEventListener('submit', (event) => {
