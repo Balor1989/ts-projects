@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"QCba":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./sass/main.scss");
 },{"./sass/main.scss":"clu1"}]},{},["QCba"], null)
-//# sourceMappingURL=/ts-projects/src.c36fc1ef.js.map
+//# sourceMappingURL=/ts-projects/src.2e036fb3.js.map
