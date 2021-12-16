@@ -1,4 +1,6 @@
 import axios from 'axios';
+import 'handlebars'
+
 
 
 interface Country {
@@ -11,8 +13,6 @@ interface Country {
 }
 
 type CountryList = Country[]
-
-
 
 
 const siteLink: { url: string, apiToken: string } = {

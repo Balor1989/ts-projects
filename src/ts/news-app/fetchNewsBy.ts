@@ -11,20 +11,22 @@ export function fetchNewsByCountry(country: string = 'us'): void {
     Loading.dots();
     axios.get(`${url}top-headlines?country=${country}&apiKey=${API_KEY}`).then(response => {
         const values = response.data;
-       convertInformation(values)
+        convertInformation(values)
+        Loading.remove();
     }).catch(function (error) {
-         Notify.failure(`${error}`)
+        Notify.failure(`${error}`)
+        Loading.remove();
     });
-    Loading.remove();
 };
 
 export function fetchNewsBySearch(search: string): void {
     Loading.dots();
     axios.get(`${url}everything?q=${search}&apiKey=${API_KEY}`).then(response => {
         const values = response.data
-             convertInformation(values)
+        convertInformation(values)
+        Loading.remove();
     }).catch(function (error) {
-         Notify.failure(`${error}`);
+        Notify.failure(`${error}`);
+        Loading.remove();
     })
-    Loading.remove();
 };
