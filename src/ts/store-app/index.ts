@@ -3,7 +3,7 @@ import 'handlebars'
 
 
 
-interface Country {
+interface City {
   country_code: string;
     name: string;
     coordinates: {
@@ -11,8 +11,13 @@ interface Country {
         lng: number
     }
 }
+interface Country{
+    code: string;
+    name: string;   
+}
+type CityList = City[];
 
-type CountryList = Country[]
+type CountryList = Country[];
 
 
 const siteLink: { url: string, apiToken: string } = {
@@ -28,17 +33,57 @@ class Api {
     
     async cities():Promise<Object> {
         try {
-            const response = await axios.get<CountryList>(`${this.config.url}cities`)
-            console.log(response)
+            const response = await axios.get<CityList>(`${this.config.url}cities`)
             return response.data
         }
         catch (error) {
             console.log(error)
             return Promise.reject(error)
        }
-     }
+    };
+        async countries():Promise<Object> {
+        try {
+            const response = await axios.get<CountryList>(`${this.config.url}countries`)
+            return response.data
+        }
+        catch (error) {
+            console.log(error)
+            return Promise.reject(error)
+       }
+    };
     
 }
 const api = new Api(siteLink)
 
-api.cities().then(response => console.log(response))
+class Location {
+
+    constructor(
+        public api: Api,
+        public countries: any | null = null,
+        public cities: any | null = null) {
+    }
+    async init() :Promise<Object[]> {
+        const response = await Promise.all([
+             this.api.countries(),
+            this.api.cities(),
+        ]);
+        
+        const [countries, cities] = response
+        this.countries = countries;
+        this.cities = cities
+        return response;
+    }
+    getCitiesByCounrtyCode(code: string):[] {
+
+        return this.cities.filter(city =>city.country_code === code)
+ }
+}
+
+
+const location = new Location(api)
+
+location.init().then(response => {
+    console.log(response);
+    console.log(location);
+    console.log(location.getCitiesByCounrtyCode('PE'))
+})
