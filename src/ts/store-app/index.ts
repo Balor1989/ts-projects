@@ -73,7 +73,8 @@ class Location {
     constructor(
         public api: Api,
         public countries: Country[] | null = null,
-        public cities: City[] | null = null) {
+        public cities: City[] | null = null,
+        public citiesList = null) {
     }
     async init() {
         const response = await Promise.all([
@@ -84,8 +85,15 @@ class Location {
         const [countries, cities] = response
         this.countries = this.convertCountries(countries);
         this.cities = this.convertCities(cities)
-        console.log(this.countries)
+        this.citiesList = this.createCitieslist(this.cities)
         return response;
+    }
+    createCitieslist(cities: any){
+        return Object.entries(cities).reduce((acc, [key]) => {
+            console.log(key)
+            acc[key] = null;
+            return acc
+        },{})
     }
 
     convertCountries(countries: any): [] {
@@ -99,7 +107,7 @@ class Location {
         return this.countries[code].name;
     }
 
-    convertCities(cities:any) {
+    convertCities(cities: any):[] {
         return cities.reduce((acc:Object, city:City):Object => {
             const country_name = this.getCounrtyNameByCode(city.country_code)
             const key = `${city.name},${country_name}`;
