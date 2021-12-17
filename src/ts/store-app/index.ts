@@ -73,10 +73,19 @@ class Location {
         ]);
         
         const [countries, cities] = response
-        this.countries = countries;
+        this.countries = this.convertCountries(countries);
         this.cities = cities
         return response;
     }
+
+    convertCountries(countries) {
+        return countries.reduce((acc, country) => {
+            acc[country.code] = country;
+            return acc;
+        },{})
+
+    }
+
     getCitiesByCounrtyCode(code: string):[] {
 
         return this.cities.filter(city =>city.country_code === code)
