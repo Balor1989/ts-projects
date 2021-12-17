@@ -84,11 +84,12 @@ class Location {
         const [countries, cities] = response
         this.countries = this.convertCountries(countries);
         this.cities = cities
+        console.log(this.countries)
         return response;
     }
 
-    convertCountries(countries) {
-        return countries.reduce((acc, country) => {
+    convertCountries(countries: any) {
+        return [...countries].reduce((acc:Object, country: { code: string | number; }) => {
             acc[country.code] = country;
             return acc;
         },{})
