@@ -72,30 +72,39 @@ class Location {
 
     constructor(
         public api: Api,
-        public countries: Object[] | null = null,
+        public countries: Object | null = null,
         public cities: Object | null = null) {
     }
-    async init()  {
+    async init() {
         const response = await Promise.all([
-             this.api.countries(),
+            this.api.countries(),
             this.api.cities(),
         ]);
         
         const [countries, cities] = response
         this.countries = this.convertCountries(countries);
-        this.cities = cities
+        this.cities = this.convertCities(cities)
         console.log(this.countries)
         return response;
     }
 
-    convertCountries(countries: any) {
-        return [...countries].reduce((acc:Object, country: { code: string | number; }) => {
+    convertCountries(countries: any): [] {
+        return countries.reduce((acc:Object, country:Country) => {
             acc[country.code] = country;
             return acc;
         },{})
 
     }
+    getCounrtyNameByCode(code: string) {
+        return this.countries[code].name;
+    }
 
+    convertCities(cities:any) {
+        return cities.reduce((acc:Object, city:City) => {
+            const country_name = this.getCounrtyNameByCode(city.country_code)
+            return country_name
+        },{})
+   }
 }
 
 
