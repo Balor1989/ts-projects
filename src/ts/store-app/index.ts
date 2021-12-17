@@ -45,7 +45,8 @@ class Api {
     async cities():Promise<Object> {
         try {
             const response = await axios.get<CityList>(`${this.config.url}cities`)
-            return response.data
+            const data:City[] = response.data
+            return data
         }
         catch (error) {
             console.log(error)
@@ -55,7 +56,8 @@ class Api {
         async countries():Promise<Object> {
         try {
             const response = await axios.get<CountryList>(`${this.config.url}countries`)
-            return response.data
+            const data:Country[] = response.data
+            return data
         }
         catch (error) {
             console.log(error)
@@ -70,10 +72,10 @@ class Location {
 
     constructor(
         public api: Api,
-        public countries: any | null = null,
-        public cities: any | null = null) {
+        public countries: Object[] | null = null,
+        public cities: Object | null = null) {
     }
-    async init() :Promise<Object[]> {
+    async init()  {
         const response = await Promise.all([
              this.api.countries(),
             this.api.cities(),
@@ -93,10 +95,6 @@ class Location {
 
     }
 
-    getCitiesByCounrtyCode(code: string):[] {
-
-        return this.cities.filter(city =>city.country_code === code)
- }
 }
 
 
