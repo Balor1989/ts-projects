@@ -8,16 +8,23 @@ flatpickr(".depart");
 flatpickr(".return")
 
 interface City {
-  country_code: string;
+    cases?: Object;
+    code: string;
+    name_translation?: string;
+    time_zone?: string;
+    country_code: string;
     name: string;
     coordinates: {
         lat: number,
         lng: number
-    }
+    };
 }
 interface Country{
+    cases?: Object;
+    name_translation?: string;
     code: string;
-    name: string;   
+    name: string;
+    currency: string;
 }
 type CityList = City[];
 
@@ -97,6 +104,5 @@ const location = new Location(api)
 
 location.init().then(response => {
     console.log(response);
-    console.log(location);
-    console.log(location.getCitiesByCounrtyCode('PE'))
+console.log(location);
 })
