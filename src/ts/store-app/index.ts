@@ -1,7 +1,11 @@
+import '../../sass/news-app.scss'
 import axios from 'axios';
-import 'handlebars'
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
 
 
+flatpickr(".depart");
+flatpickr(".return")
 
 interface City {
   country_code: string;
