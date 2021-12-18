@@ -9,6 +9,11 @@
 <body>
     <header>
         <nav class="header__navigation">
+            <a class="header__back" href="index.html">
+                <svg class="header__arrow">
+                    <use href="images/arrow.svg#arrow-left2"></use>
+                </svg>
+            </a>
             <h1 class="header__title">Avia tickets</h1>
             <div class="header__select-box">
                 <select class="header__select-menu">
@@ -23,23 +28,23 @@
         <div class="form-section">
             <div class="container">
                 <div class="card">
-                    <form>
+                    <form class="form-section__autocomplete-form">
                         <div class="">
                             <h3 class="card-title">Search Tickets</h3>
                             <div class="">
-                                <input type="text"  class=" " />
-                                <label>Origin</label>
+                                <input type="text" id="autoComplete" class="form-section__autocomplete-departure" />
+                                <label>Departure city</label>
                             </div>
                             <div class="">
-                                <input type="text" class="" />
-                                <label >Destination</label>
+                                <input type="text" id="autoComplete" class="autoComplete" />
+                                <label >Arrival city</label>
                             </div>
                             <div class="">
-                                <input type="text" class="depart"/>
+                                <input type="text" class="form-section__depart-date"/>
                                 <label for="">Depart date </label>
                             </div>
                             <div class="">
-                                <input type="text" class="return" />
+                                <input type="text" class="form-section__return-date" />
                                 <label for="">Return date </label>
                             </div>
                         </div>

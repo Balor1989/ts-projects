@@ -1,7 +1,8 @@
-import '../../sass/news-app.scss'
+import '../../sass/store-app.scss'
 import axios from 'axios';
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+
 
 
 flatpickr(".depart");
@@ -81,7 +82,7 @@ class Location {
             this.api.countries(),
             this.api.cities(),
         ]);
-        
+  
         const [countries, cities] = response
         this.countries = this.convertCountries(countries);
         this.cities = this.convertCities(cities)
@@ -90,7 +91,7 @@ class Location {
     }
     createCitieslist(cities: any){
         return Object.entries(cities).reduce((acc, [key]) => {
-            console.log(key)
+            // console.log(key)
             acc[key] = null;
             return acc
         },{})
@@ -120,7 +121,33 @@ class Location {
 
 const location = new Location(api)
 
-location.init().then(response => {
-    console.log(response);
-console.log(location);
+
+class FormAutocomplete {
+    
+    constructor(
+        public form:HTMLFormElement= document.querySelector('.form-section__autocomplete-form'),
+        public origin:HTMLInputElement = document.querySelector('.form-section__autocomplete-origin'),
+        public arrival:HTMLInputElement = document.querySelector('.form-section__autocomplete-arrival'),
+        public departDate = document.querySelector('.form-section__depart-date'),
+        public returnDate = document.querySelector('.form-section__return-date'),
+    ) { }
+    get formEl() {
+        return this.form
+    }
+
+}
+
+const formAutocomplete = new FormAutocomplete()
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    initApp()
+
+    async function initApp() {
+        await location.init()
+       
+        
+        
+  }
 })
+    
