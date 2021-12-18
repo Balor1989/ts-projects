@@ -2,12 +2,9 @@ import '../../sass/store-app.scss'
 import axios from 'axios';
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-
-
-
-flatpickr(".depart");
-flatpickr(".return")
-
+    
+flatpickr(".form-section__depart-date");
+flatpickr(".form-section__return-date")
 interface City {
     cases?: Object;
     code: string;
@@ -126,13 +123,25 @@ class FormAutocomplete {
     
     constructor(
         public form:HTMLFormElement= document.querySelector('.form-section__autocomplete-form'),
-        public origin:HTMLInputElement = document.querySelector('.form-section__autocomplete-origin'),
+        public origin:HTMLInputElement = document.querySelector('.form-section__autocomplete-departure'),
         public arrival:HTMLInputElement = document.querySelector('.form-section__autocomplete-arrival'),
-        public departDate = document.querySelector('.form-section__depart-date'),
-        public returnDate = document.querySelector('.form-section__return-date'),
+        public departDate:HTMLInputElement = document.querySelector('.form-section__depart-date'),
+        public returnDate:HTMLInputElement = document.querySelector('.form-section__return-date'),
     ) { }
-    get formEl() {
+    get formEl():HTMLFormElement {
         return this.form
+    }
+    get originValue():string {
+        return this.origin.value
+    }
+    get arrivalValue(): string{
+        return this.arrival.value
+    }
+    get departDateValue():string {
+        return this.departDate.value
+    }
+    get returnDateValue() {
+        return this.departDate.value
     }
 
 }
@@ -143,11 +152,23 @@ const formAutocomplete = new FormAutocomplete()
 document.addEventListener('DOMContentLoaded', () => {
     initApp()
 
+    const form = formAutocomplete.form
+    
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        onFormSubmit();
+})
+
     async function initApp() {
-        await location.init()
-       
-        
-        
-  }
+        await location.init()     
+    }
+    async function onFormSubmit() {
+        const origin = formAutocomplete.originValue;
+        const arrival = formAutocomplete.arrivalValue;
+        const depart_date = formAutocomplete.departDateValue;
+        const return_date = formAutocomplete.returnDateValue;
+
+        console.log(origin, arrival, depart_date, return_date)
+    }
 })
     
