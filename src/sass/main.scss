@@ -3,3 +3,24 @@ img {
   display: block;
   width: 500px;
 }
+.app-list {
+  display: flex;
+}
+.todo-box {
+  width: 33%;
+  height: 100vh;
+  // background-color: burlywood;
+}
+.news-box {
+  width: 33%;
+  height: 100vh;
+  // background-color: rgb(16, 184, 196);
+}
+.login-box {
+  width: 33%;
+  height: 100vh;
+  // background-color: rgb(206, 95, 169);
+}
+.start-container {
+  margin-top: 50%;
+}
