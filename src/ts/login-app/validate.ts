@@ -6,7 +6,7 @@ const regExpDic:{email:RegExp, password:RegExp} = {
 export function validate(element: HTMLInputElement): boolean {
   const RegExpName: string = element.dataset.required;
   if (!regExpDic[RegExpName]) return true;
-console.log(regExpDic[RegExpName].test(element.value))
+  
   return regExpDic[RegExpName].test(element.value);
 }
 
