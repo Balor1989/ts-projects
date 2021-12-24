@@ -1,3 +1,48 @@
 .form-section {
+  height: 100vh;
+  padding-top: 50%;
+  padding-top: 350px;
   width: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  &__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &__card-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 35px;
+  }
+  &__login-form {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__input-box {
+    margin-bottom: 20px;
+  }
+  &__btn-box {
+    text-align: center;
+  }
+  &__submit-btn {
+    font-family: 'open sans', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.17;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #faf5f5;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+    transition: background-color 250ms;
+  }
+  &__submit-btn:hover,
+  &__submit-btn:focus {
+    background-color: rgba(27, 129, 90, 0.541);
+  }
 }

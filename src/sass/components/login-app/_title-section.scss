@@ -1,3 +1,18 @@
 .title-section {
+  height: 100vh;
+  padding-top: 380px;
   width: 50%;
+  background-color: rgba(27, 129, 90, 0.541);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  &__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 35px;
+  }
 }

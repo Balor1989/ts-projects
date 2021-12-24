@@ -1,26 +1,56 @@
 @import './utils/tag-settings';
+body {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 20px;
+}
 img {
   display: block;
-  width: 500px;
+
+  width: 350px;
+  margin-bottom: 30px;
+}
+a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 .app-list {
   display: flex;
 }
 .todo-box {
-  width: 33%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 33.3%;
   height: 100vh;
-  // background-color: burlywood;
+  background-color: rgb(252, 228, 197);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .news-box {
-  width: 33%;
+  width: 33.3%;
   height: 100vh;
-  // background-color: rgb(16, 184, 196);
+  background-color: rgb(252, 228, 197);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .login-box {
-  width: 33%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 33.4%;
   height: 100vh;
-  // background-color: rgb(206, 95, 169);
+  background-color: rgb(252, 228, 197);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .start-container {
+  margin: 0 10px;
+  padding: 0 30px;
   margin-top: 50%;
+}
+.title {
+  text-align: center;
+  color: rgb(27, 26, 26);
 }
