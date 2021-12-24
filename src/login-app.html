@@ -25,14 +25,14 @@
                 <form class="form-section__login-form">
                     <div class="form-section__input-box">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-section__input-email" id="email" aria-describedby="emailHelp"
+                        <input type="email" class="form-control form-section__input-email" id="email" aria-describedby="emailHelp"
                         placeholder="Enter email" data-required="email"
-                        data-invalid-message="Please provide valid email example@example.com" />
+                        data-message="Please provide valid email example@example.com" />
                     </div>
                     <div class="form-section__input-box">
                         <label for="password">Password</label>
-                        <input type="password" class="form-section__input-password" id="password" placeholder="Password"
-                        data-required="password" />
+                        <input type="password" class="form-control form-section__input-password" id="password" placeholder="Password"
+                        data-required="password" data-message="Invalid password" />
                     </div>
                 <button type="submit" class="form-section__submit-btn">Submit</button>
                 </form>
