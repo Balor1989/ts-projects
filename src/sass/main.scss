@@ -20,7 +20,9 @@ a {
 .app-list {
   display: flex;
 }
-.todo-box {
+.todo-box,
+.login-box,
+.news-box {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   width: 33.3%;
@@ -30,20 +32,13 @@ a {
     23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .news-box {
-  width: 33.3%;
-  height: 100vh;
-  background-color: rgb(252, 228, 197);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 0;
 }
 .login-box {
+  border-radius: 0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 33.4%;
-  height: 100vh;
-  background-color: rgb(252, 228, 197);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .start-container {
   margin: 0 10px;
