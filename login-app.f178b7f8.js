@@ -13,4 +13,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./showInputErrors":"yVVD","./validate":"zgPK"}],"qE8K":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("../../sass/login-app.scss"),require("bootstrap/dist/css/bootstrap.css");var e=require("./removeInputError"),r=require("./submitFunction"),t=require("./submitFunction"),n=document.querySelector(".form-section__login-form");n.addEventListener("submit",function(e){e.preventDefault(),(0,r.onSubmit)()}),t.inputs.forEach(function(r){return r.addEventListener("focus",function(){return(0,e.removeInputError)(r)})});
 },{"../../sass/login-app.scss":"SZvK","bootstrap/dist/css/bootstrap.css":"SZvK","./removeInputError":"kTRp","./submitFunction":"zXwf"}]},{},["qE8K"], null)
-//# sourceMappingURL=/ts-projects/login-app.490341c1.js.map
+//# sourceMappingURL=/ts-projects/login-app.f178b7f8.js.map
