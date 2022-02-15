@@ -94,4 +94,4 @@ var o;function t(o){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.
 },{"vanilla-back-to-top":"mehQ"}],"FOu8":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("@fontsource/roboto"),require("@fontsource/readex-pro"),require("../../sass/news-app.scss");var e=require("./loadNews"),r=require("../utils/notiflix-init"),t=require("../utils/backToTop"),o=require("./fetchNewsBy");(0,o.fetchNewsByCountry)("us");var s=document.querySelector(".card-section__card-form");(0,t.backToTop)(),(0,r.notiflixSettings)(),s.addEventListener("submit",function(r){r.preventDefault(),(0,e.loadNews)()});
 },{"@fontsource/roboto":"WpIu","@fontsource/readex-pro":"rsYt","../../sass/news-app.scss":"ajek","./loadNews":"tz1L","../utils/notiflix-init":"D8ET","../utils/backToTop":"BjVx","./fetchNewsBy":"QtDN"}]},{},["FOu8"], null)
-//# sourceMappingURL=/ts-projects/news-app.7d83e644.js.map
+//# sourceMappingURL=/ts-projects/news-app.4dfcc23c.js.map
